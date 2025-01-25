@@ -61,8 +61,9 @@ Use an existing wallet keystore file or execute the following command to generat
 docker run -it -v "/privasea/config:/app/config"  \
 privasea/acceleration-node-beta:latest ./node-calc new_keystore
 ```
- 
-![1](https://github.com/user-attachments/assets/9924c887-7d5d-4c3f-b077-6654f970dc25)
+ ![Screenshot 2025-01-25 111802](https://github.com/user-attachments/assets/a84c8952-6b1a-4f8d-b16e-e77874d396b4)
+
+
 
 Check if there is a keystore file in the /privasea/config directory:
 ```
@@ -82,3 +83,43 @@ ls
 
 ## 4. Link node address and reward address
 Use the wallet address corresponding to the keystore file to link it with the reward address on DeepSea https://deepsea-beta.privasea.ai/privanetixNode
+
+![3](https://github.com/user-attachments/assets/c9e27d04-e548-422e-9b70-f1980955a266)
+
+## 5. Start the node
+
+Run the command to start the Privanetix(acceleration) node:
+```
+cd /privasea/
+```
+```
+docker run  -d   -v "/privasea/config:/app/config" \
+  -e KEYSTORE_PASSWORD=123456 \
+  privasea/acceleration-node-beta:latest
+```
+
+Parameter Explanation:
+ EYSTORE_PASSWORD: The password corresponding to the keystore file
+ 
+ /privasea/config: The local directory where the wallet_keystore file is stored
+
+![4](https://github.com/user-attachments/assets/ae0188bc-551f-4d78-ba95-b2389945dcf9)
+
+check the dashboard whether the node is online
+
+![Screenshot 2025-01-25 111202](https://github.com/user-attachments/assets/bb31680e-e800-4515-a66e-77e6f66606c1)
+
+
+## 6. View the node health
+```
+# Command to check the node's running status:
+docker logs -f (nama docker nya)
+
+#Parameter Explanation:
+# eb723c38e3e6283f6c9d50512828408bd6df2fbba22d1991daa459778d3e73bc is the container ID from the previous operation.
+```
+
+
+## Done and LFG 
+
+
